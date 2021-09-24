@@ -1,9 +1,8 @@
 const User = require('../modals/user')
 
 exports.createUser = async (req,res) => {
-    console.log('hey');
     const {email,username,phone,password} = req.body
-    console.log('user', req.body);
+    console.log(req.body);
     const user = new User({
         username,
         email: email,

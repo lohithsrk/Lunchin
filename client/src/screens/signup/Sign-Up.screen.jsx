@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 // import { SignUpStyles } from './Sign-Up.styles';
-import { Text, View,Button } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { createUser } from '../../axios/auth.axios';
 
 import Input from '../../components/input/input.component';
 
 export default function SignUp() {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
-	const [phoneNumber, setPhoneNumber] = useState('');
+	const [phone, setPhone] = useState('');
 	const [password, setPassword] = useState('');
 
-const handleSubmit =(e)=>{
-
-}
+	const handleSubmit = () => {
+		console.log('hi');
+		createUser({ email, username, phone, password }).then((res) =>
+			console.log(res)
+		);
+	};
 
 	return (
 		<View
@@ -23,10 +27,22 @@ const handleSubmit =(e)=>{
 			}}
 		>
 			<Input placeholder='Enter Email' value={email} setValue={setEmail} />
-			<Input placeholder='Enter Username' value={username} setValue={setUsername} />
-			<Input placeholder='Enter Phone number' value={phoneNumber} setValue={setPhoneNumber} />
-			<Input placeholder='Enter Password' value={password} setValue={setPassword} />
-            <Button title='Continue' onPress={handleSubmit} />
+			<Input
+				placeholder='Enter Username'
+				value={username}
+				setValue={setUsername}
+			/>
+			<Input
+				placeholder='Enter Phone number'
+				value={phone}
+				setValue={setPhone}
+			/>
+			<Input
+				placeholder='Enter Password'
+				value={password}
+				setValue={setPassword}
+			/>
+			<Button title='Continue' onPress={handleSubmit} />
 		</View>
 	);
 }
