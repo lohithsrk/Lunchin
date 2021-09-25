@@ -11,6 +11,13 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default function Input({ value, setValue,placeholder }) {
-	return <TextInput placeholder={placeholder} style={styles.input} onChangeText={(e) => setValue(e)} />;
+export default function Input({ value, setValue, placeholder }) {
+	return (
+		<TextInput
+			placeholder={placeholder}
+			style={styles.input}
+			onChangeText={(e) => setValue(e)}
+			value={value}
+		/>
+	);
 }

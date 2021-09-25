@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 // import { SignUpStyles } from './Sign-Up.styles';
 import { Text, View, Button } from 'react-native';
-import {createUser } from '../../axios/auth.axios'
+import { createUser } from '../../axios/auth.axios';
 
 import Input from '../../components/input/input.component';
 
 export default function SignUp() {
-	const [email, setEmail] = useState('');
-	const [username, setUsername] = useState('');
-	const [phone, setPhone] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState('srklohith05@gmail.com');
+	const [username, setUsername] = useState('lohith');
+	const [phone, setPhone] = useState('7810052277');
+	const [password, setPassword] = useState('lohithsrk');
 
-	const handleSubmit = () => {
-		createUser({ email, username, phone, password }).then((res) =>
-			console.log(res)
-		);
-	};
+	const handleSubmit = async () => {
+			await createUser(email, phone, username, password).then((res) =>
+				console.log(res)
+			);
+	}
 
 	return (
 		<View
