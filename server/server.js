@@ -45,7 +45,7 @@ passport.serializeUser(passport.serializeUser(User));
 passport.deserializeUser(passport.deserializeUser(User));
 
 mongoose
-	.connect(process.env.ATLAS, {
+	.connect(process.env.DB_URL, {
 		useNewUrlParser: true,
 		// useCreateIndex: true,
 		// useFindAndModify: true,
