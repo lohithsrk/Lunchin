@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
-const Category = require('./category')
-const user = require('./user')
+
+
 const { ObjectId } = mongoose.Schema;
 const productSchema = new mongoose.Schema({
     chef: {
         type: ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
     category : {
         type: ObjectId,
