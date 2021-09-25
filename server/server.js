@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 let mongoClient = require('mongodb');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/auth');
-const categoryRoutes = require('./routes/category');
+const categoryRoutes = require('./routes/category')
+const orderRoutes = require('./routes/order')
 const passport = require('passport');
 const flash = require('connect-flash');
 const LocalStrategy = require('passport-local');
@@ -20,6 +22,7 @@ app.use(bodyParser.json());
 require('dotenv').config();
 app.use(morgan('dev'));
 app.use(flash());
+app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 const sessionConfig = {
@@ -55,6 +58,7 @@ mongoose
 app.use('/', productRoutes);
 app.use('/', userRoutes);
 app.use('/', categoryRoutes);
+app.use('/', orderRoutes);
 app.listen(8080, () => {
 	console.log('connected to port 8080');
 });
