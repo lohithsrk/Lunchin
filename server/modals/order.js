@@ -1,15 +1,12 @@
 const mongoose = require('mongoose')
 const user = require('./user')
+const product = require('./product')
 const { ObjectId } = mongoose.Schema;
 const orderSchema = new mongoose.Schema({
     
     productName : {
-        type: String,
-        required:true,
-        trim:true
-    },
-    chef : {
-        type: String,
+        type: ObjectId,
+        ref: "product"
     }, 
     quantity : {
         type: Number,
@@ -20,8 +17,6 @@ const orderSchema = new mongoose.Schema({
         required :true
         
     }
-
-    
 
 })
 

@@ -3,7 +3,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const { ObjectId } = mongoose.Schema;
 const product = require("./product");
 const Order = require('./order')
-co;
+
 userSchema = new mongoose.Schema({
   email: {
     type: String,
