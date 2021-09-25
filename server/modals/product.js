@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 const Category = require('./category')
+const user = require('./user')
 const { ObjectId } = mongoose.Schema;
 const productSchema = new mongoose.Schema({
-    
+    chef: {
+        type: ObjectId,
+        ref: 'user'
+    },
     category : {
         type: ObjectId,
         ref: 'Category'
@@ -21,8 +25,7 @@ const productSchema = new mongoose.Schema({
         required :true,
     },
     qtyAvailable : {
-        type: Number,
-        required :true, 
+        type: Number, 
     },
     availableDays : {
         type : [String]

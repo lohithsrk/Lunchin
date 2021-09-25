@@ -2,8 +2,10 @@ const Category =  require('../modals/category')
 
 
 exports.createCategory = async (req,res) => {
-     await Category.create(req.body)
-     res.json(Category)
+    
+    const category =  await new Category({name:req.body.name}).save()
+    console.log(category);
+     res.json(category)
 }
 exports.showCategories = async (req,res) => {
    
