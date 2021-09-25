@@ -5,9 +5,8 @@ exports.createUser = async (req,res) => {
     console.log(req.body);
     const user = new User({
         username,
-        email: email,
+        email,
         phone
-
     })
     const newUser = await User.register(user,password)
     res.json(newUser)

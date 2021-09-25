@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import { SignUpStyles } from './Sign-Up.styles';
 import { Text, View, Button } from 'react-native';
-import { createUser } from '../../axios/auth.axios';
+import {createUser } from '../../axios/auth.axios'
 
 import Input from '../../components/input/input.component';
 
@@ -12,7 +12,6 @@ export default function SignUp() {
 	const [password, setPassword] = useState('');
 
 	const handleSubmit = () => {
-		console.log('hi');
 		createUser({ email, username, phone, password }).then((res) =>
 			console.log(res)
 		);
@@ -31,6 +30,16 @@ export default function SignUp() {
 				placeholder='Enter Username'
 				value={username}
 				setValue={setUsername}
+			/>
+			<Input
+				placeholder='Enter Phone number'
+				value={phone}
+				setValue={setPhone}
+			/>
+			<Input
+				placeholder='Enter Password'
+				value={password}
+				setValue={setPassword}
 			/>
 
 			<Button title='continue' onPress={handleSubmit} />

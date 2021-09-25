@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/auth');
-const categoryRoutes = require('./routes/category')
+const categoryRoutes = require('./routes/category');
 const passport = require('passport');
 const flash = require('connect-flash');
 const LocalStrategy = require('passport-local');
@@ -16,7 +16,7 @@ const { use } = require('passport');
 const { userInfo } = require('os');
 
 const app = express();
-app.use(bodyParser());
+app.use(bodyParser.json());
 require('dotenv').config();
 app.use(morgan('dev'));
 app.use(flash());
@@ -42,7 +42,7 @@ passport.serializeUser(passport.serializeUser(User));
 passport.deserializeUser(passport.deserializeUser(User));
 
 mongoose
-	.connect(process.env.ATLAS, {
+	.connect(process.env.DB_URL, {
 		useNewUrlParser: true,
 		// useCreateIndex: true,
 		// useFindAndModify: true,
@@ -53,7 +53,7 @@ mongoose
 
 // routes
 app.use('/', productRoutes);
-app.use('/', userRoutes); 
+app.use('/', userRoutes);
 app.use('/', categoryRoutes);
 app.listen(8080, () => {
 	console.log('connected to port 8080');
