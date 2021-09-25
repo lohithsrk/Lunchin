@@ -32,17 +32,8 @@ export default function SignUp() {
 				value={username}
 				setValue={setUsername}
 			/>
-			<Input
-				placeholder='Enter Phone number'
-				value={phone}
-				setValue={setPhone}
-			/>
-			<Input
-				placeholder='Enter Password'
-				value={password}
-				setValue={setPassword}
-			/>
-			<Button title='Continue' onPress={handleSubmit} />
+
+			<Button title='continue' onPress={handleSubmit} />
 		</View>
 	);
 }
