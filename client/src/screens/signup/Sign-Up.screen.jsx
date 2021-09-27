@@ -12,10 +12,10 @@ export default function SignUp() {
 	const [password, setPassword] = useState('lohithsrk');
 
 	const handleSubmit = async () => {
-			await createUser(email, phone, username, password).then((res) =>
-				console.log(res)
-			);
-	}
+		await createUser(email, phone, username, password).then((res) =>
+			console.log(res)
+		);
+	};
 
 	return (
 		<View
