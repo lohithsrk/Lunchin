@@ -12,3 +12,6 @@ exports.showProducts = async (req,res) => {
     const allProducts = await Product.find({})
     res.json(allProducts)
 }
+exports.rating = async (req,res) => {
+    
+}

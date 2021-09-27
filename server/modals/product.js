@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { rating } = require('../controllers/product');
 
 
 const { ObjectId } = mongoose.Schema;
@@ -37,6 +38,15 @@ const productSchema = new mongoose.Schema({
     noticePeriod : {
         type: String
     },
+    reviews: {
+        type: [String]
+    },
+    ratings: [
+        {
+            star: Number,
+            // postedBy: { type: ObjectId, ref: 'User' }
+        }
+    ]
     
 
 })
