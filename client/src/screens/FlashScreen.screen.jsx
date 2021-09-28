@@ -7,6 +7,7 @@ import {
 	Animated,
 	TouchableOpacity
 } from 'react-native';
+import CustomButton from '../components/CustomButton.component';
 
 export default function FlashScreen({ navigation }) {
 	return (
@@ -33,22 +34,7 @@ export default function FlashScreen({ navigation }) {
 				<Animated.View style={{ position: 'absolute', bottom: 0, left: 0 }}>
 					<Image source={require('../../assets/Loading_Screen/aside2.png')} />
 				</Animated.View>
-				<TouchableOpacity
-					activeOpacity={0.5}
-					style={{
-						backgroundColor: '#EFED5D',
-						alignItems: 'center',
-						justifyContent: 'center',
-						paddingVertical: 10,
-						paddingHorizontal: 20,
-						borderRadius: 30,
-						marginTop: 30,
-						width: '50%'
-					}}
-					onPress={() => navigation.navigate('Home')}
-				>
-					<Text style={{ fontSize: 24, fontWeight: '700' }}>LUNCHIN'</Text>
-				</TouchableOpacity>
+				<CustomButton />
 			</Animated.View>
 		</SafeAreaView>
 	);
