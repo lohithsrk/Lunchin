@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName='FlashScreen'>
+			<Stack.Navigator initialRouteName='Home'>
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
