@@ -107,7 +107,7 @@ export default function WelcomeSignup({ navigation }) {
 						right: 30,
 						zIndex: 3
 					}}
-					onPress={() => navigation.navigate('Home')}
+					onPress={() => navigation.navigate('SignUp')}
 				>
 					<Text style={{ fontSize: 22, fontWeight: '700' }}>Sign Up</Text>
 				</TouchableOpacity>

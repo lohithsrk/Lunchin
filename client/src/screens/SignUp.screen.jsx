@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar, Image } from 'react-native';
+import { View, Text, StatusBar, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SignUp() {
@@ -10,19 +10,16 @@ export default function SignUp() {
 					width: '100%',
 					alignItems: 'center',
 					justifyContent: 'center',
-					flexDirection: 'row',
-					position: 'relative',
 					marginTop: 10
 				}}
 			>
-				<View style={{ alignItems: 'center' }}>
+				<View style={{ alignItems: 'center',width:'100%' }}>
 					<Text style={{ fontSize: 40, fontWeight: '700' }}>Sign Up</Text>
 					<View
 						style={{
 							backgroundColor: '#5D5FEF',
 							width: 90,
 							height: 3,
-							marginTop: 5
 						}}
 					></View>
 				</View>
