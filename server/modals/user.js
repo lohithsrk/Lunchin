@@ -29,6 +29,10 @@ userSchema = new mongoose.Schema({
     type: [ObjectId],
     ref: "Order",
   },
+  earnings : {
+    type: Number,
+    default: 0
+  }
   
 });
 userSchema.plugin(passportLocalMongoose);

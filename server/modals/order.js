@@ -16,6 +16,15 @@ const orderSchema = new mongoose.Schema({
         type: Number,
         required :true
         
+    },
+    price: {
+        type: Number
+    }
+    ,
+    created_at : {
+        type: Date,
+        default: Date.now
+
     }
 
 })
