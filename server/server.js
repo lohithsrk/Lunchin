@@ -19,6 +19,7 @@ const { userInfo } = require('os');
 
 const app = express();
 app.use(bodyParser.json());
+// require('dotenv').config({ path: '.env' });
 require('dotenv').config();
 app.use(morgan('dev'));
 app.use(flash());
@@ -43,7 +44,6 @@ app.use(passport.session());
 passport.use(new LocalStrategy(passport.authenticate(User)));
 passport.serializeUser(passport.serializeUser(User));
 passport.deserializeUser(passport.deserializeUser(User));
-
 mongoose
 	.connect(process.env.DB_URL, {
 		useNewUrlParser: true,

@@ -4,6 +4,7 @@ const { ObjectId } = mongoose.Schema;
 const product = require("./product");
 const Order = require('./order')
 userSchema = new mongoose.Schema({
+  
   email: {
     type: String,
     required: true,
@@ -14,10 +15,24 @@ userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  certificate: {
+    type: Object
+  },
+  // photo: {
+  //   type: String
+  // },
+  kitchen : {
+    type: String,
+    // "coordinates": ['latitude', 'longitude']
+  },
   orders: {
     type: [ObjectId],
     ref: "Order",
   },
+  earnings : {
+    type: Number,
+    default: 0
+  }
   
 });
 userSchema.plugin(passportLocalMongoose);
