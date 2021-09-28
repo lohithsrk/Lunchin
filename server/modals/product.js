@@ -43,7 +43,9 @@ const productSchema = new mongoose.Schema({
     },
     ratings: [
         {
-            star: Number,
+            star: {
+                type: Number
+            }
             // postedBy: { type: ObjectId, ref: 'User' }
         }
     ]
