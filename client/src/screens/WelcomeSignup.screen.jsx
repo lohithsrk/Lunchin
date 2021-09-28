@@ -1,7 +1,14 @@
 import React from 'react';
-import { View, Text, StatusBar, Image, SafeAreaView } from 'react-native';
+import {
+	View,
+	Text,
+	StatusBar,
+	Image,
+	SafeAreaView,
+	TouchableOpacity
+} from 'react-native';
 
-export default function Home() {
+export default function WelcomeSignup({ navigation }) {
 	return (
 		<SafeAreaView
 			style={{
@@ -75,16 +82,36 @@ export default function Home() {
 					Join the fam!
 				</Text>
 			</View>
-
-			<Image
-				source={require('../../assets/Signup/chef1.png')}
-				style={{ position: 'absolute', bottom: 0, zIndex: 1 }}
-			/>
-			<CustomButton></CustomButton>
-			<Image
-				source={require('../../assets/Signup/bg1.png')}
-				style={{ position: 'absolute', bottom: 0, width: '100%' }}
-			/>
+			<View style={{ position: 'relative', bottom: 0, flex: 1 }}>
+				<Image
+					source={require('../../assets/Signup/bg1.png')}
+					style={{ position: 'absolute', bottom: 0, width: '100%', zIndex: 1 }}
+				/>
+				<Image
+					source={require('../../assets/Signup/chef1.png')}
+					style={{ position: 'absolute', bottom: 0, zIndex: 1 }}
+				/>
+				<TouchableOpacity
+					activeOpacity={0.5}
+					style={{
+						backgroundColor: '#FFE8B2',
+						alignItems: 'center',
+						justifyContent: 'center',
+						paddingVertical: 10,
+						paddingHorizontal: 20,
+						borderRadius: 30,
+						marginTop: 30,
+						width: '40%',
+						position: 'absolute',
+						top: 60,
+						right: 30,
+						zIndex: 3
+					}}
+					onPress={() => navigation.navigate('Home')}
+				>
+					<Text style={{ fontSize: 22, fontWeight: '700' }}>Sign Up</Text>
+				</TouchableOpacity>
+			</View>
 		</SafeAreaView>
 	);
 }
