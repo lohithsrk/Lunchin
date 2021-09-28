@@ -20,6 +20,12 @@ const orderSchema = new mongoose.Schema({
     price: {
         type: Number
     }
+    ,
+    created_at : {
+        type: Date,
+        default: Date.now
+
+    }
 
 })
 
