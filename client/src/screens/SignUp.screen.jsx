@@ -7,13 +7,14 @@ import {
 	TouchableOpacity,
 	SafeAreaView,
 	ScrollView,
-	TextInput
+	TextInput,
+	StyleSheet
 } from 'react-native';
 
 export default function SignUp() {
 	return (
 		<SafeAreaView style={{ marginTop: StatusBar.currentHeight }}>
-			<ScrollView>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<View
 					style={{
 						width: '100%',
@@ -63,24 +64,58 @@ export default function SignUp() {
 						</Text>
 					</TouchableOpacity>
 				</View>
+				<View
+					style={{
+						width: '100%',
+						alignItems: 'center',
+						justifyContent: 'center',
+						marginTop: 20
+					}}
+				>
+					<TextInput style={styles.input} placeholder='Name' />
+					<TextInput style={styles.input} placeholder='Email' />
+					<TextInput style={styles.input} placeholder='Mobile number' />
+					<TextInput
+						style={styles.input}
+						placeholder='Alternate mobile number'
+					/>
+					<TextInput style={styles.input} placeholder='FSSAI Certificate' />
+				</View>
 				<View>
-					<View>
-						<TextInput placeholder='Name' />
+					<View
+						style={{
+							alignItems: 'center',
+							width: '100%',
+							marginVertical: 50,
+							marginTop: 20
+						}}
+					>
+						<Text style={{ fontSize: 40, fontWeight: '700' }}>
+							Kitchen Location
+						</Text>
+						<View
+							style={{
+								backgroundColor: '#5D5FEF',
+								width: 200,
+								height: 3
+							}}
+						></View>
 					</View>
-					<View>
-						<TextInput placeholder='Email' />
-					</View>
-					<View>
-						<TextInput placeholder='Mobile number' />
-					</View>
-					<View>
-						<TextInput placeholder='Alternate mobile number' />
-					</View>
-					<View>
-						<TextInput placeholder='FSSAI Certificate' />
-					</View>
+					
 				</View>
 			</ScrollView>
 		</SafeAreaView>
 	);
 }
+
+const styles = StyleSheet.create({
+	input: {
+		borderWidth: 1,
+		width: '70%',
+		marginVertical: 20,
+		paddingHorizontal: 20,
+		paddingVertical: 10,
+		borderRadius: 10,
+		borderColor: 'rgba(0,0,0,0.25)'
+	}
+});
