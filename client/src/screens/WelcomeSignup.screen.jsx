@@ -55,7 +55,7 @@ export default function WelcomeSignup({ navigation }) {
 						fontWeight: '700',
 						fontSize: 50,
 						lineHeight: 80,
-						letterSpacing: 3
+						letterSpacing: 1
 					}}
 				>
 					Hey there, Welcome to Lunchin' !
