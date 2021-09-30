@@ -8,12 +8,13 @@ import FlashScreen from './src/screens/FlashScreen.screen';
 import SignUp from './src/screens/SignUp.screen';
 import ApprovalScreen from './src/screens/Approval.screen';
 import Login from './src/screens/Login.screen';
+import CreatePin from './src/screens/CreatePin.screen';
 
 const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName='Login'>
+			<Stack.Navigator initialRouteName='CreatePin'>
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
@@ -33,6 +34,12 @@ const App = () => {
 					name='ApprovalScreen'
 					component={ApprovalScreen}
 					options={{ headerShown: false }}
+				/>	
+					<Stack.Screen
+					name='CreatePin'
+					component={CreatePin}
+					options={{ headerShown: false }}
+					
 				/>
 					<Stack.Screen
 					name='Login'
