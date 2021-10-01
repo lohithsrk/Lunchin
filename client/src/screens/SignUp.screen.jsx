@@ -35,7 +35,7 @@ export default function SignUp({ navigation }) {
 	const [username, setUsername] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
-	const [password, setPassword] = useState('');
+	const [alternatePhone, setAlternatePhone] = useState('');
 	// const [email, setEmail] = useState('')
 	// const [email, setEmail] = useState('')
 	const fetchLocation = async () => {
@@ -58,13 +58,16 @@ export default function SignUp({ navigation }) {
 			);
 		}
 	};
+
 	useEffect(() => {
 		fetchLocation();
 	}, []);
 
 	const handleSubmit = () => {
 		navigation.navigate('WelcomeSignup');
-		createUser(email, phone, username, password);
+		createUser(email, phone, username, alternatePhone).then((res) =>
+			console.log(res.data)
+		);
 	};
 
 	return (
@@ -148,14 +151,10 @@ export default function SignUp({ navigation }) {
 					<TextInput
 						style={styles.input}
 						placeholder='Alternate mobile number'
+						onChangeText={(value) => setAlternatePhone(value)}
+						value={alternatePhone}
 					/>
 					<TextInput style={styles.input} placeholder='FSSAI Certificate' />
-					<TextInput
-						style={styles.input}
-						value={password}
-						onChangeText={(value) => setPassword(value)}
-						placeholder='Password'
-					/>
 				</View>
 				<View>
 					<View
@@ -178,7 +177,7 @@ export default function SignUp({ navigation }) {
 						></View>
 					</View>
 				</View>
-				
+
 				<View
 					style={{
 						width: '100%',
