@@ -8,12 +8,17 @@ import FlashScreen from './src/screens/FlashScreen.screen';
 import SignUp from './src/screens/SignUp.screen';
 import ApprovalScreen from './src/screens/Approval.screen';
 import Login from './src/screens/Login.screen';
+import CreatePin from './src/screens/CreatePin.screen';
 
 const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
+<<<<<<< HEAD
 			<Stack.Navigator initialRouteName='SignUp'>
+=======
+			<Stack.Navigator initialRouteName='CreatePin'>
+>>>>>>> 382a108d6b4f8b574441602f61a089a200100ac8
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
@@ -33,6 +38,12 @@ const App = () => {
 					name='ApprovalScreen'
 					component={ApprovalScreen}
 					options={{ headerShown: false }}
+				/>	
+					<Stack.Screen
+					name='CreatePin'
+					component={CreatePin}
+					options={{ headerShown: false }}
+					
 				/>
 				<Stack.Screen
 					name='Login'
