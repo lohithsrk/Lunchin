@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName='Login'>
+			<Stack.Navigator initialRouteName='SignUp'>
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
@@ -29,12 +29,12 @@ const App = () => {
 					component={SignUp}
 					options={{ headerShown: false }}
 				/>
-					<Stack.Screen
+				<Stack.Screen
 					name='ApprovalScreen'
 					component={ApprovalScreen}
 					options={{ headerShown: false }}
 				/>
-					<Stack.Screen
+				<Stack.Screen
 					name='Login'
 					component={Login}
 					options={{ headerShown: false }}
