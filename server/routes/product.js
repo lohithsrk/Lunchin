@@ -14,7 +14,7 @@ const { createCategory,showCategories }  = require('../controllers/category')
 router.post('/chef/:id/product',createProduct)
 router.get('/products',showProducts)
 router.post('product/category/:id', createProduct)
-router.post('/product/:id/star',rating)
+
 
 
 

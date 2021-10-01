@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { rating } = require('../controllers/product');
+
 
 
 const { ObjectId } = mongoose.Schema;
