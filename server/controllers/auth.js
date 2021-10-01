@@ -8,7 +8,7 @@ const cloudinary = require('cloudinary');
 // })
 
 exports.createUser = async (req, res) => {
-	const { email, username, phone, password } = req.body;
+	const { email, username, phone, alternatePhone } = req.body;
 	console.log(req.body);
 	// let image = await cloudinary.uploader.upload(certificate, {
 	// 	public_id: `${Date.now( )}`,
@@ -21,16 +21,14 @@ exports.createUser = async (req, res) => {
 	const user = new User({
 		username,
 		email,
-		phone
+		phone,
+		alternatePhone
 		// certificate : {
 		// 	public_id: image.public_id,
 		// 	url: image.secure_url
 		// }
 	});
-
-	const newUser = await User.register(user, password);
-	console.log(newUser);
-	res.json(newUser);
+	res.json(user);
 };
 exports.loginUser = (req, res) => {
 	const { username, password } = req.body;
