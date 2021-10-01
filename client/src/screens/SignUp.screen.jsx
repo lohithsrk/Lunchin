@@ -178,17 +178,7 @@ export default function SignUp({ navigation }) {
 						></View>
 					</View>
 				</View>
-				<MapView
-					region={{
-						latitude: location.lat,
-						longitude: location.lng,
-						latitudeDelta: 0.0922,
-						longitudeDelta: 0.0421
-					}}
-					style={{ width: '100%', height: 300 }}
-				>
-					
-				</MapView>
+				
 				<View
 					style={{
 						width: '100%',
