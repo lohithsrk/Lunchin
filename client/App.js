@@ -14,11 +14,7 @@ const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-<<<<<<< HEAD
 			<Stack.Navigator initialRouteName='SignUp'>
-=======
-			<Stack.Navigator initialRouteName='CreatePin'>
->>>>>>> 382a108d6b4f8b574441602f61a089a200100ac8
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
