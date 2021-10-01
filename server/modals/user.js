@@ -13,7 +13,12 @@ userSchema = new mongoose.Schema({
   phone: {
     type: Number,
     required: true,
-    unique: true,
+    unique: true
+  },
+  alternatePhone : {
+    type: Number,
+    required: true,
+    unique: true
   },
   certificate: {
     type: Object
