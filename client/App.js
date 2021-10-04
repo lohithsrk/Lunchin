@@ -9,12 +9,12 @@ import SignUp from './src/screens/SignUp.screen';
 import ApprovalScreen from './src/screens/Approval.screen';
 import Login from './src/screens/Login.screen';
 import CreatePin from './src/screens/CreatePin.screen';
-
+import Categoryscreen from './src/screens/Category.screen';
 const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName='SignUp'>
+			<Stack.Navigator initialRouteName='Categoryscreen'>
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
@@ -44,6 +44,11 @@ const App = () => {
 				<Stack.Screen
 					name='Login'
 					component={Login}
+					options={{ headerShown: false }}
+				/>
+					<Stack.Screen
+					name='Categoryscreen'
+					component={Categoryscreen}
 					options={{ headerShown: false }}
 				/>
 			</Stack.Navigator>
