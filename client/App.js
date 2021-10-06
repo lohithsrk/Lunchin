@@ -9,7 +9,6 @@ import WelcomeSignup from './src/screens/auth/WelcomeSignup.screen';
 import FlashScreen from './src/screens/auth/FlashScreen.screen';
 import SignUp from './src/screens/auth/SignUp.screen';
 import ApprovalScreen from './src/screens/Approval.screen';
-<<<<<<< HEAD
 import Login from './src/screens/auth/Login.screen';
 import CreatePin from './src/screens/auth/CreatePin.screen';
 
@@ -18,20 +17,11 @@ import CreatePin from './src/screens/auth/CreatePin.screen';
 import Products from './src/screens/products/Products.screen';
 import Cuisine from './src/screens/products/Cuisine.screen';
 
-=======
-import Login from './src/screens/Login.screen';
-import CreatePin from './src/screens/CreatePin.screen';
-import Categoryscreen from './src/screens/Category.screen';
->>>>>>> d8195f87fb93735f5cd13aac779a47a17e8cc6fd
 const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-<<<<<<< HEAD
-			<Stack.Navigator initialRouteName='Cuisine'>
-=======
 			<Stack.Navigator initialRouteName='Categoryscreen'>
->>>>>>> d8195f87fb93735f5cd13aac779a47a17e8cc6fd
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
@@ -62,7 +52,11 @@ const App = () => {
 					component={Login}
 					options={{ headerShown: false }}
 				/>
-<<<<<<< HEAD
+				<Stack.Screen
+					name='Categoryscreen'
+					component={Categoryscreen}
+					options={{ headerShown: false }}
+				/>
 				<Stack.Screen
 					name='Products'
 					component={Products}
@@ -71,11 +65,6 @@ const App = () => {
 				<Stack.Screen
 					name='Cuisine'
 					component={Cuisine}
-=======
-					<Stack.Screen
-					name='Categoryscreen'
-					component={Categoryscreen}
->>>>>>> d8195f87fb93735f5cd13aac779a47a17e8cc6fd
 					options={{ headerShown: false }}
 				/>
 			</Stack.Navigator>
