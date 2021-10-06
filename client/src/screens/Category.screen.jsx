@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { View, Text, StatusBar, Image,TouchableOpacity,TouchableHighlight ,StyleSheet} from "react-native";
 
 export default function Categoryscreen() {
@@ -71,12 +71,10 @@ export default function Categoryscreen() {
           Pick a Category
         </Text>
       </View>
-      <TouchableHighlight
-      style={
-        press && styles.buttonPress
-      }>
+      
   
       <View
+      
         style={{
           borderRadius: 15,
           backgroundColor: "red",
@@ -91,6 +89,15 @@ export default function Categoryscreen() {
             shadowOpacity: 0.8,
             elevation: 3,
         }}
+      ><TouchableOpacity
+      onPress={()=> setPress(true)}
+      style={[
+        styles.button,
+        press ? { backgroundColor: "green",position: "absolute",
+            width: "100%",
+            height: "100%",
+            borderRadius: 15 } : {}
+    ]}
       >
         <Image
           source={require("../../assets/category/dosa.png")}
@@ -98,7 +105,7 @@ export default function Categoryscreen() {
             position: "absolute",
             width: "100%",
             height: "100%",
-            borderRadius: 15,
+            borderRadius: 0,
           }}
         ></Image>
         <Text
@@ -111,8 +118,9 @@ export default function Categoryscreen() {
         >
           Breakfast
         </Text>
+        </TouchableOpacity> 
       </View>
-      </TouchableHighlight>  
+     
       <View
         style={{
           backgroundColor: "red",
@@ -207,10 +215,9 @@ export default function Categoryscreen() {
   );
 }
 const styles = StyleSheet.create({
-  buttonPress: {
-  borderColor: "red",
-  backgroundColor: "red",
-  borderWidth: 1,
-  borderRadius: 10
+  button: {
+  
+  height: '100%',
+  width:'100%'
   }
   });

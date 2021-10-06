@@ -12,3 +12,8 @@ exports.showProducts = async (req,res) => {
     const allProducts = await Product.find({})
     res.json(allProducts)
 }
+exports.ChefProducts  = async (req,res) => {
+    const {chefId} = req.params
+    const chefProduct = await Product.find({chef:chefId}).exec()
+    res.json(chefProduct)
+}
