@@ -14,11 +14,13 @@ import CreatePin from './src/screens/auth/CreatePin.screen';
 import Categoryscreen from './src/screens/Category.screen';
 import Products from './src/screens/products/Products.screen';
 import MyProduct from './src/screens/products/MyProduct.screen';
+import FillProductDetails from './src/screens/products/FillProductDetails.screen';
+
 const Stack = createStackNavigator();
 const App = () => {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName='Categoryscreen'>
+			<Stack.Navigator initialRouteName='FillProductDetails'>
 				<Stack.Screen
 					name='FlashScreen'
 					component={FlashScreen}
@@ -49,29 +51,19 @@ const App = () => {
 					component={Login}
 					options={{ headerShown: false }}
 				/>
-<<<<<<< HEAD
 				<Stack.Screen
-=======
-					<Stack.Screen
->>>>>>> f1c91b3a4d75ee7f463219b22d74d1e1384564ac
 					name='Categoryscreen'
 					component={Categoryscreen}
 					options={{ headerShown: false }}
 				/>
-<<<<<<< HEAD
 				<Stack.Screen
-					name='Products'
-					component={Products}
+					name='MyProduct'
+					component={MyProduct}
 					options={{ headerShown: false }}
 				/>
 				<Stack.Screen
-					name='Cuisine'
-					component={Cuisine}
-=======
-					<Stack.Screen
-					name='MyProduct'
-					component={MyProduct}
->>>>>>> f1c91b3a4d75ee7f463219b22d74d1e1384564ac
+					name='FillProductDetails'
+					component={FillProductDetails}
 					options={{ headerShown: false }}
 				/>
 			</Stack.Navigator>
