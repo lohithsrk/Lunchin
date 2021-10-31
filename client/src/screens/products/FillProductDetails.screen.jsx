@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
 	View,
 	Text,
@@ -9,11 +9,29 @@ import {
 	Image,
 	TouchableOpacity
 } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 const NumberInput = ({ text }) => {
+
+	const [count, setCount] = useState(0)
+
+
+	const incrementCount = () => ;
+
+	const decrementCount = () => count--;
+
 	return (
 		<View>
 			<Text style={{ textAlign: 'center' }}>{text}</Text>
+			<View style={{ flexDirection: 'row' }}>
+				<TouchableOpacity onPress={incrementCount}>
+				<AntDesign name='pluscircle' size={24} color='#5D5FEF' />
+				</TouchableOpacity>
+				<Text>{count}</Text>
+				<TouchableOpacity onPress={decrementCount}>
+				<AntDesign name='minuscircle' size={24} color='#5D5FEF' />
+				</TouchableOpacity>
+			</View>
 		</View>
 	);
 };
